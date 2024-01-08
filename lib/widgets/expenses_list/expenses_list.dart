@@ -8,6 +8,9 @@ class ExpensesList extends StatelessWidget {
   final List<Expense> expenses;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemCount: expenses.length,itemBuilder: (ctx, index) => ExpenseItem(expenses[index]));
+    return ListView.builder(
+      itemCount: expenses.length,itemBuilder: (ctx, index) => Dismissible(
+        key: ValueKey(expenses[index]),
+        child: ExpenseItem(expenses[index])));
   }
 }
